@@ -47,13 +47,14 @@ def main():
         prediction = model.predict(input_variables)[0]
         prediction_proba = model.predict_proba(input_variables)
         prediction = (prediction_proba[0])[1]
+    
     if int(prediction)==1:
                 
         prediction = '{"Patient has chronic Kidney Disease Probability of ":' + str(float(prediction)) + '}'
     
-    return ret
+    
     else:
-        prediction='Patient is Healthy !!!!!'
+        prediction = 'Patient is Healthy !!!!!'
        
         # Render the form again, but add in the prediction and remind user
         # of the values they input before
