@@ -51,11 +51,11 @@ def main():
             
     if int(prediction)==1:
                 
-        prediction = "Patient has chronic Kidney Disease Probability of ": + str(float(prediction_probs)) 
+        prediction = "Patient has chronic Kidney Disease Probability of " + str(float(prediction_probs)) 
     
     
     else:
-        prediction = "Patient is healthy with Disease Probability of ": + str(float(prediction_probs)) 
+        prediction = "Patient is healthy with Disease Probability of " + str(float(prediction_probs)) 
        
         # Render the form again, but add in the prediction and remind user
         # of the values they input before
