@@ -35,7 +35,7 @@ def main():
         rbc_cnt = request.form['rbc_cnt']
         htn = request.form.get('htn')
         diabetes = request.form.get('diabetes')
-        actual_class = request.form.get('actual_class')
+        
         
         # Make DataFrame for model
         input_variables = pd.DataFrame([[specific_gravity,Albumin,Blood_Gluc_rand,Blood_Urea,Serum_Cr,sodium,Hemoglobin,packed_cell_volume,rbc_cnt,htn,diabetes]],
