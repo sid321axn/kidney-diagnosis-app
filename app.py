@@ -5,12 +5,7 @@ from flask import Flask, render_template, request, redirect, url_for
 from flask import *
 from datetime import datetime
 import numpy
-from psycopg2.extensions import register_adapter, AsIs
 
-def adapt_numpy_int64(numpy_int64):
-    return AsIs(numpy_int64)
-
-register_adapter(numpy.int64, adapt_numpy_int64)
 
 # Use pickle to load in the pre-trained model
 with open(f'model/ckd_random_red.pkl', 'rb') as f:
@@ -50,9 +45,10 @@ def main():
 
         # Get the model's prediction
         prediction = model.predict(input_variables)[0]
-
+        prediction_proba = model.predict_proba(input_variables)
     if int(prediction)==1:
-        prediction='Patient may have chronic Kidney Disease'
+        
+        print("Patient has chronic Kidney Disease Probability of :",prediction_proba)
     else:
         prediction='Patient is Healthy !!!!!'
        
