@@ -15,7 +15,7 @@ with open(f'model/ckd_random_red.pkl', 'rb') as f:
 app = flask.Flask(__name__, template_folder='templates')
 
 # Set up the main route
-@app.route('/main', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def main():
     if request.method == 'GET':
         # Just render the initial form, to get input
@@ -46,9 +46,12 @@ def main():
         # Get the model's prediction
         prediction = model.predict(input_variables)[0]
         prediction_proba = model.predict_proba(input_variables)
+        prediction = (prediction_proba[0])[1]
     if int(prediction)==1:
-        
-        print("Patient has chronic Kidney Disease Probability of :",prediction_proba)
+                
+        prediction = '{"Patient has chronic Kidney Disease Probability of ":' + str(float(prediction)) + '}'
+    
+    return ret
     else:
         prediction='Patient is Healthy !!!!!'
        
