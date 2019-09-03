@@ -51,7 +51,7 @@ def main():
             
     
                 
-        predictions = "Patient has chronic Kidney Disease Probability of " + str(float(prediction_probs)) 
+        predictions = "Patient has chronic Kidney Disease Probability of " + str(float(prediction_probs)) +" %"
     
         
        
