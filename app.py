@@ -49,13 +49,11 @@ def main():
         prediction_probs = round(prediction_proba[0, 1] * 100, 2)
 
             
-    if int(prediction)==1:
+    
                 
-        prediction = "Patient has chronic Kidney Disease Probability of " + str(float(prediction_probs)) 
+        predictions = "Patient has chronic Kidney Disease Probability of " + str(float(prediction_probs)) 
     
-    
-    else:
-        prediction = "Patient is healthy with Disease Probability of " + str(float(prediction_probs)) 
+        
        
         # Render the form again, but add in the prediction and remind user
         # of the values they input before
@@ -73,7 +71,7 @@ def main():
                                                      'htn':htn,
                                                      'diabetes':diabetes,
                                                      },
-                                     result=prediction
+                                     result=predictions
                                      
                                      )
 
