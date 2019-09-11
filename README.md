@@ -1,61 +1,56 @@
-# Project : Heart Disease Prediction
+# Chronic Kidney Disease Diagnosis Web App
 
 # Overview
 
-Preventing heart disease is important. Good data-driven systems for predicting heart disease can improve the entire research and prevention process, making sure that more people can live healthy lives.
-
-In the United States, the Centers for Disease Control and Prevention is a good resource for information about heart disease.Accorting to their [website](https://www.cdc.gov/heartdisease/facts.htm).
-
-- About 610,000 people die of heart disease in the United States every year–that’s 1 in every 4 deaths.
-- Heart disease is the leading cause of death for both men and women. More than half of the deaths due to heart disease in 2009 were in men.
-- Coronary heart disease (CHD) is the most common type of heart disease, killing over 370,000 people annually.
-- Every year about 735,000 Americans have a heart attack. Of these, 525,000 are a first heart attack and 210,000 happen in people who have already had a heart attack.
-- Heart disease is the leading cause of death for people of most ethnicities in the United States, including African Americans, Hispanics, and whites. For American Indians or Alaska Natives and Asians or Pacific Islanders, heart disease is second only to cancer.
-
-So, in this project I have applied different machine learning algorithm to predict heart disease based on several features present in the dataset
-such as Age, Maximum heart rate, Blood pressure levels etc.
+In this project I have developed a web app for automated diagnosis of chronic kidney disease cases based on 11 input variables. I have used python and flask for making the web app and hosted it on heroku cloud. The web app is live at (https://kidney-diagnosis-app.herokuapp.com/)
 
 ## About Dataset
 
-This dataset is from a study of heart disease that has been open to the public for many years. The study collects various measurements on patient health and cardiovascular statistics, and of course makes patient identities anonymous.
-Data is provided courtesy of the [Cleveland Heart Disease] (http://archive.ics.uci.edu/ml/datasets/statlog+(heart)) Database via the UCI Machine Learning repository.
+The dataset used for this project is taken from UCI Mchine Learning Repository at [chronic kidney disease](https://archive.ics.uci.edu/ml/datasets/chronic_kidney_disease).This dataset can be used to predict the chronic kidney disease and it is collected from the Apollo hospital at Tamil Nadu in nearly 2 months of period. 
 
-Aha, D., and Dennis Kibler. "Instance-based prediction of heart-disease presence with the Cleveland database." University of California 3.1 (1988): 3-2.
 
-This dataset contains 13 attributes (which have been extracted from
-a larger set of 75)       
+This dataset contains 24 attributes and 1 Target class variable
 
 ## Attribute Information:
 ------------------------
-      -- 1. age       
-      -- 2. sex       
-      -- 3. chest pain type  (4 values)       
-      -- 4. resting blood pressure  
-      -- 5. serum cholestoral in mg/dl      
-      -- 6. fasting blood sugar > 120 mg/dl       
-      -- 7. resting electrocardiographic results  (values 0,1,2) 
-      -- 8. maximum heart rate achieved  
-      -- 9. exercise induced angina    
-      -- 10. oldpeak = ST depression induced by exercise relative to rest   
-      -- 11. the slope of the peak exercise ST segment     
-      -- 12. number of major vessels (0-3) colored by flourosopy        
-      -- 13.  thal: 3 = normal; 6 = fixed defect; 7 = reversable defect     
+          
+      -- 1. Age(numerical)
+      -- 2. Blood Pressure(numerical) - bp in mm/Hg
+      -- 3. Specific Gravity(nominal) sg - (1.005,1.010,1.015,1.020,1.025)
+      -- 4. Albumin(nominal) al - (0,1,2,3,4,5)
+      -- 5. Sugar(nominal) su - (0,1,2,3,4,5)
+      -- 6. Red Blood Cells(nominal) rbc - (normal,abnormal)
+      -- 7. Pus Cell (nominal) pc - (normal,abnormal)
+      -- 8. Pus Cell clumps(nominal) pcc - (present,notpresent)
+      -- 9. Bacteria(nominal) ba - (present,notpresent)
+      -- 10. Blood Glucose Random(numerical) bgr in mgs/dl
+      -- 11. Blood Urea(numerical) bu in mgs/dl
+      -- 12. Serum Creatinine(numerical) sc in mgs/dl
+      -- 13. Sodium(numerical) sod in mEq/L
+      -- 14. Potassium(numerical) pot in mEq/L
+      -- 15. Hemoglobin(numerical) hemo in gms
+      -- 16. Packed Cell Volume(numerical)
+      -- 17. White Blood Cell Count(numerical) wc in cells/cumm
+      -- 18. Red Blood Cell Count(numerical) rc in millions/cmm
+      -- 19. Hypertension(nominal) htn - (yes,no)
+      -- 20. Diabetes Mellitus(nominal) dm - (yes,no)
+      -- 21. Coronary Artery Disease(nominal) cad - (yes,no)
+      -- 22. Appetite(nominal) appet - (good,poor)
+      -- 23. Pedal Edema(nominal) pe - (yes,no)
+      -- 24. Anemia(nominal) ane - (yes,no)     
 
 ## Attributes types
 -----------------
 
-Real: 1,4,5,8,10,12
-Ordered:11,
-Binary: 2,6,9
-Nominal:7,3,13
+Numerical: 1,2,10,11,12,13,14,15,16,17,18
+Nominal: 3,4,5,6,7,8,9,19,20,21,23,24
+
 
 ## Variable to be predicted
 ------------------------
-Absence (1) or presence (2) of heart disease
+Class - nominal - (ckd, notckd)
 
-No missing values.
-
-270 observations
+400 observations
 
 # Dependencies
 This project requires Python 3.x and the following Python libraries installed:
@@ -64,18 +59,21 @@ This project requires Python 3.x and the following Python libraries installed:
 - [matplotlib](https://matplotlib.org/)
 - [scikit-learn](https://scikit-learn.org/stable/)
 - [scipy](https://www.scipy.org/)
+- [mlextend] (https://pypi.org/project/mlxtend/)
+- [lime] (https://pypi.org/project/lime/)
+- [flask 1.1.1](https://pypi.org/project/Flask/)
 
 Use **pip** to install any missing dependencies.
 I also reccommend to install Anaconda, a pre-packaged Python distribution that contains all of the necessary libraries and software for this project which also include jupyter notebook to run and execute [IPython Notebook](http://ipython.org/notebook.html).
 
 ## Run :
 
-In a terminal or command window, navigate to the top-level project repo Classification Projects/Heart_Disease_prediction (that contains this README) and run one of the following commands:
+In a terminal or command window, navigate to the top-level project repo kidney-diagnosis-app/(that contains this README) and run one of the following commands:
 
-```ipython notebook heart_disease.ipynb```
+```ipython notebook Chronic_kidney_Classification.ipynb```
 or
 
-```jupyter notebook heart_disease.ipynb```
+```jupyter notebook Chronic_kidney_Classification.ipynb```
 
 This will open the iPython Notebook software and project file in your browser.
 
@@ -83,4 +81,4 @@ This will open the iPython Notebook software and project file in your browser.
 I have done model evaluation based on following sklearn metric.
 - Confusion Matrix
 - Sklearn classification report
-- Model score
+- Mcnemar Test
