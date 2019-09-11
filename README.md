@@ -42,8 +42,9 @@ This dataset contains 24 attributes and 1 Target class variable
 ## Attributes types
 -----------------
 
-Numerical: 1,2,10,11,12,13,14,15,16,17,18
-Nominal: 3,4,5,6,7,8,9,19,20,21,23,24
+- Numerical: 1,2,10,11,12,13,14,15,16,17,18
+
+- Nominal: 3,4,5,6,7,8,9,19,20,21,23,24
 
 
 ## Variable to be predicted
@@ -59,8 +60,8 @@ This project requires Python 3.x and the following Python libraries installed:
 - [matplotlib](https://matplotlib.org/)
 - [scikit-learn](https://scikit-learn.org/stable/)
 - [scipy](https://www.scipy.org/)
-- [mlextend] (https://pypi.org/project/mlxtend/)
-- [lime] (https://pypi.org/project/lime/)
+- [mlextend](https://pypi.org/project/mlxtend/)
+- [lime](https://pypi.org/project/lime/)
 - [flask 1.1.1](https://pypi.org/project/Flask/)
 
 Use **pip** to install any missing dependencies.
